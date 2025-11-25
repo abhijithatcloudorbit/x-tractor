@@ -1,0 +1,275 @@
+/* X-tractor — SaaS Style UI: Slate + Electric Violet */
+
+:root {
+  --bg: #f4f5f7;
+  --card-bg: #ffffff;
+  --border: #e3e7ee;
+
+  --text-dark: #1e293b;
+  --text-mid: #475569;
+
+  --brand: #7c3aed;        /* Electric Violet */
+  --brand-soft: #f3e8ff;   /* Soft Lavender */
+
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --font: Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+}
+
+/* LAYOUT WRAPPER */
+.dash-wrapper {
+  display: flex;
+  background: var(--bg);
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+/* SIDEBAR */
+.dash-sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 24px;
+  height: calc(100vh - 90px);
+  position: fixed;
+  top: 90px;
+  left: 0;
+}
+
+.side-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.side-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--text-mid);
+  font-size: 15px;
+}
+
+.side-nav li {
+  cursor: pointer;
+  padding: 8px 6px;
+  border-radius: 8px;
+  transition: 0.15s ease;
+}
+
+.side-nav li:hover {
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* MAIN CONTENT */
+.dash-main {
+  margin-left: 240px;
+  padding: 32px;
+  width: calc(100% - 240px);
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+}
+
+/* GRID */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* CARD */
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--text-dark);
+}
+
+/* STORAGE WIDGET */
+.storage-card {
+  text-align: center;
+}
+
+.storage-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.storage-value {
+  font-size: 15px;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+/* DROP ZONE */
+.drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 48px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: #fafafa;
+}
+
+.drop-zone:hover {
+  background: #f8f5ff;
+  border-color: var(--brand);
+}
+
+.active-drop {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.drop-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.drop-sub {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.drop-text-active {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  margin-top: 16px;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--brand);
+  height: 100%;
+  transition: width 0.3s;
+}
+
+/* FILE LIST */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-row {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.file-row:hover {
+  background: #f3f0ff;
+  border-color: var(--brand);
+}
+
+.file-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.file-size {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+/* ACTIVITY LOG */
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-row {
+  padding: 10px 2px;
+  font-size: 14px;
+  color: var(--text-mid);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ERROR MESSAGE */
+.error-msg {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #dc2626;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #ffffff;
+  width: 70%;
+  max-width: 680px;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.2);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.modal-pdf {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: var(--radius);
+}
